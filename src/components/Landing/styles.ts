@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
+import Constants from "expo-constants";
 
 const styles = StyleSheet.create({
   container: {
@@ -6,6 +7,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#8257e5",
     justifyContent: "center",
     padding: 40,
+    paddingTop: Platform.OS === "ios" ? 20 : 20 + Constants.statusBarHeight,
   },
 
   banner: {
@@ -52,6 +54,16 @@ const styles = StyleSheet.create({
     fontFamily: "Archivo_700Bold",
     color: "#fff",
     fontSize: 20,
+  },
+
+  totalConnections: {
+    fontFamily: "Poppins_400Regular",
+    color: "#d4c2ff",
+    fontSize: 12,
+    lineHeight: 20,
+    maxWidth: 140,
+    marginTop: 40,
+    marginBottom: 20,
   },
 });
 
