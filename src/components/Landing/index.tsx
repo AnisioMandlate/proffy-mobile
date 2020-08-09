@@ -15,6 +15,10 @@ const Landing = () => {
     navigation.navigate("GiveClasses");
   }
 
+  function handleNavigateToStudyPage() {
+    navigation.navigate("Study");
+  }
+
   return (
     <View style={styles.container}>
       <Image source={landingImg} style={styles.banner} />
@@ -23,18 +27,19 @@ const Landing = () => {
         <Text style={styles.titleBold}>O que deseja fazer?</Text>
       </Text>
       <View style={styles.buttonsContainer}>
-        <RectButton style={[styles.button, styles.buttonPrimary]}>
+        <RectButton
+          style={[styles.button, styles.buttonPrimary]}
+          onPress={handleNavigateToStudyPage}
+        >
           <Image source={studyIcon} />
           <Text style={styles.buttonText}>Estudar</Text>
         </RectButton>
-        <RectButton style={[styles.button, styles.buttonSecundary]}>
+        <RectButton
+          style={[styles.button, styles.buttonSecundary]}
+          onPress={handleNavigateToGiveClassesPage}
+        >
           <Image source={giveClassIcon} />
-          <Text
-            style={styles.buttonText}
-            onPress={handleNavigateToGiveClassesPage}
-          >
-            Dar Aulas
-          </Text>
+          <Text style={styles.buttonText}>Dar Aulas</Text>
         </RectButton>
       </View>
       <Text style={styles.totalConnections}>
