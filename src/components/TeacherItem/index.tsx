@@ -2,7 +2,7 @@ import React from "react";
 import { View, Image, Text } from "react-native";
 import styles from "./styles";
 import heartOutlineIcon from "../../assets/images/icons/heart-outline.png";
-import unfavouriteIcon from "../../assets/images/icons/unfavourite.png";
+import unfavouriteIcon from "../../assets/images/icons/unfavorite.png";
 import whatsappIcon from "../../assets/images/icons/whatsapp.png";
 import { RectButton } from "react-native-gesture-handler";
 
@@ -29,8 +29,9 @@ const TeacherItem = () => {
           <Text style={styles.priceValue}>R$ 20,00</Text>
         </Text>
         <View style={styles.buttonContainer}>
-          <RectButton style={styles.favouriteButton}>
-            <Image source={heartOutlineIcon} />
+          <RectButton style={[styles.favouriteButton, styles.favorited]}>
+            {/* <Image source={heartOutlineIcon} /> */}
+            <Image source={unfavouriteIcon} />
           </RectButton>
           <RectButton style={styles.contactButton}>
             <Image source={whatsappIcon} />
