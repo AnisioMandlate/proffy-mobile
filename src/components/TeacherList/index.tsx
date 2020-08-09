@@ -5,8 +5,10 @@ import PageHeader from "../PageHeader";
 import TeacherItem from "../TeacherItem";
 import { BorderlessButton, RectButton } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
+import api from "../../services/api";
 
 function TeacherList() {
+  const [teachers, setTeachers] = useState([]);
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
   const [subject, setSubject] = useState("");
   const [week_day, setWeek_day] = useState("");
@@ -14,6 +16,17 @@ function TeacherList() {
 
   function handleToggleFilterVisible() {
     setIsFiltersVisible(!isFiltersVisible);
+  }
+
+  async function handleFiltersSubmit() {
+    const response = await api.get("classes", {
+      params: {
+        subject,
+        week_day,
+        time,
+      },
+    });
+    setTeachers(response.data);
   }
 
   return (
@@ -59,7 +72,10 @@ Disponíveis"
                 />
               </View>
             </View>
-            <RectButton style={styles.submitButton}>
+            <RectButton
+              onPress={handleFiltersSubmit}
+              style={styles.submitButton}
+            >
               <Text style={styles.submitButtonText}>Filtrar</Text>
             </RectButton>
           </View>
@@ -69,12 +85,9 @@ Disponíveis"
         style={styles.teacherList}
         contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 16 }}
       >
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map((teacher) => (
+          <TeacherItem />
+        ))}
       </ScrollView>
     </View>
   );
