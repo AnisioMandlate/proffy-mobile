@@ -8,6 +8,9 @@ import { Feather } from "@expo/vector-icons";
 
 function TeacherList() {
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
+  const [subject, setSubject] = useState("");
+  const [week_day, setWeek_day] = useState("");
+  const [time, setTime] = useState("");
 
   function handleToggleFilterVisible() {
     setIsFiltersVisible(!isFiltersVisible);
@@ -29,6 +32,8 @@ Disponíveis"
             <Text style={styles.label}>Matéria</Text>
             <TextInput
               style={styles.input}
+              value={subject}
+              onChangeText={(text) => setSubject(text)}
               placeholder="Qual é a matéria? "
               placeholderTextColor="#c1bccc"
             />
@@ -37,6 +42,8 @@ Disponíveis"
                 <Text style={styles.label}>Dia da Semana</Text>
                 <TextInput
                   style={styles.input}
+                  value={week_day}
+                  onChangeText={(text) => setWeek_day(text)}
                   placeholder="Qual é o dia? "
                   placeholderTextColor="#c1bccc"
                 />
@@ -45,6 +52,8 @@ Disponíveis"
                 <Text style={styles.label}>Horário</Text>
                 <TextInput
                   style={styles.input}
+                  value={time}
+                  onChangeText={(text) => setTime(text)}
                   placeholder="Qual é o horário? "
                   placeholderTextColor="#c1bccc"
                 />
