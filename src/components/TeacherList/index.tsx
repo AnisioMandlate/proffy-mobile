@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, ScrollView, Text, TextInput } from "react-native";
 import styles from "./styles";
 import PageHeader from "../PageHeader";
-import TeacherItem from "../TeacherItem";
+import TeacherItem, { Teacher } from "../TeacherItem";
 import { BorderlessButton, RectButton } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 import api from "../../services/api";
@@ -26,6 +26,7 @@ function TeacherList() {
         time,
       },
     });
+    setIsFiltersVisible(false);
     setTeachers(response.data);
   }
 
@@ -85,8 +86,8 @@ Disponíveis"
         style={styles.teacherList}
         contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 16 }}
       >
-        {teachers.map((teacher) => (
-          <TeacherItem />
+        {teachers.map((teacher: Teacher) => (
+          <TeacherItem key={teacher.id} teacher={teacher} />
         ))}
       </ScrollView>
     </View>
