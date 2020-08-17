@@ -26,6 +26,13 @@ const styles = StyleSheet.create({
     maxWidth: 160,
     marginVertical: 40,
   },
+  description: {
+    fontFamily: "Archivo_400Regular",
+    color: "#fff",
+    fontSize: 16,
+    maxWidth: 200,
+    marginTop: -20,
+  },
 });
 
 export default styles;

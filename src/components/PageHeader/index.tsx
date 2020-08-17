@@ -9,12 +9,14 @@ import { useNavigation } from "@react-navigation/native";
 interface PageHeaderProps {
   title: string;
   headerRight?: ReactNode;
+  description?: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({
   title,
   headerRight,
   children,
+  description,
 }) => {
   const navigation = useNavigation();
 
@@ -34,6 +36,9 @@ const PageHeader: React.FC<PageHeaderProps> = ({
         <Text style={styles.title}>{title}</Text>
         {headerRight}
       </View>
+      {description ? (
+        <Text style={styles.description}>{description}</Text>
+      ) : null}
       {children}
     </View>
   );
