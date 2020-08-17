@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
+import RNPickerSelect from "react-native-picker-select";
 import styles from "./styles";
 import PageHeader from "../PageHeader";
 import TeacherItem, { Teacher } from "../TeacherItem";
@@ -74,22 +75,39 @@ Disponíveis"
           {isFiltersVisible && (
             <View style={styles.searchForm}>
               <Text style={styles.label}>Matéria</Text>
-              <TextInput
-                style={styles.input}
-                value={subject}
-                onChangeText={(text) => setSubject(text)}
-                placeholder="Qual é a matéria? "
-                placeholderTextColor="#c1bccc"
+              <RNPickerSelect
+                onValueChange={(value) => setSubject(value)}
+                items={[
+                  { value: "Desenho", label: "Desenho" },
+                  { value: "Filosofia", label: "Filosofia" },
+                  { value: "Física", label: "Física" },
+                  { value: "Francês", label: "Francês" },
+                  { value: "Geografia", label: "Geografia" },
+                  { value: "História", label: "História" },
+                  { value: "Inglês", label: "Inglês" },
+                  { value: "Matemática", label: "Matemática" },
+                  { value: "Português", label: "Português" },
+                  { value: "Química", label: "Química" },
+                  {
+                    value: "TIC",
+                    label: "Tecnologias de Informação e Comunicação",
+                  },
+                ]}
               />
               <View style={styles.inputGroup}>
                 <View style={styles.inputBlock}>
                   <Text style={styles.label}>Dia da Semana</Text>
-                  <TextInput
-                    style={styles.input}
-                    value={week_day}
-                    onChangeText={(text) => setWeek_day(text)}
-                    placeholder="Qual é o dia? "
-                    placeholderTextColor="#c1bccc"
+                  <RNPickerSelect
+                    onValueChange={(value) => setWeek_day(value)}
+                    items={[
+                      { value: "0", label: "Domingo" },
+                      { value: "1", label: "Segunda-feira" },
+                      { value: "2", label: "Terça-feira" },
+                      { value: "3", label: "Quarta-feira" },
+                      { value: "4", label: "Quinta-feira" },
+                      { value: "5", label: "Sexta-feira" },
+                      { value: "6", label: "Sábado" },
+                    ]}
                   />
                 </View>
                 <View style={styles.inputBlock}>
