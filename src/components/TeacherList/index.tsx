@@ -59,7 +59,7 @@ function TeacherList() {
   return (
     <KeyboardAvoidingView
       keyboardVerticalOffset={Platform.select({ ios: 0, android: 500 })}
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
       style={{ flex: 1 }}
     >
       <View style={styles.container}>
@@ -78,16 +78,16 @@ Disponíveis"
               <RNPickerSelect
                 onValueChange={(value) => setSubject(value)}
                 items={[
-                  { value: "Desenho", label: "Desenho" },
-                  { value: "Filosofia", label: "Filosofia" },
-                  { value: "Física", label: "Física" },
-                  { value: "Francês", label: "Francês" },
-                  { value: "Geografia", label: "Geografia" },
-                  { value: "História", label: "História" },
-                  { value: "Inglês", label: "Inglês" },
-                  { value: "Matemática", label: "Matemática" },
-                  { value: "Português", label: "Português" },
-                  { value: "Química", label: "Química" },
+                  { label: "Desenho", value: "Desenho" },
+                  { label: "Filosofia", value: "Filosofia" },
+                  { label: "Física", value: "Física" },
+                  { label: "Francês", value: "Francês" },
+                  { label: "Geografia", value: "Geografia" },
+                  { label: "História", value: "História" },
+                  { label: "Inglês", value: "Inglês" },
+                  { label: "Matemática", value: "Matemática" },
+                  { label: "Português", value: "Português" },
+                  { label: "Química", value: "Química" },
                   {
                     value: "TIC",
                     label: "Tecnologias de Informação e Comunicação",
@@ -100,13 +100,13 @@ Disponíveis"
                   <RNPickerSelect
                     onValueChange={(value) => setWeek_day(value)}
                     items={[
-                      { value: "0", label: "Domingo" },
-                      { value: "1", label: "Segunda-feira" },
-                      { value: "2", label: "Terça-feira" },
-                      { value: "3", label: "Quarta-feira" },
-                      { value: "4", label: "Quinta-feira" },
-                      { value: "5", label: "Sexta-feira" },
-                      { value: "6", label: "Sábado" },
+                      { label: "Domingo", value: "0" },
+                      { label: "Segunda-feira", value: "1" },
+                      { label: "Terça-feira", value: "2 " },
+                      { label: "Quarta-feira", value: "3 " },
+                      { label: "Quinta-feira", value: "4 " },
+                      { label: "Sexta-feira", value: "5" },
+                      { label: "Sábado", value: "6" },
                     ]}
                   />
                 </View>
