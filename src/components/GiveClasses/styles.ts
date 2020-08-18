@@ -20,17 +20,54 @@ const styles = StyleSheet.create({
     maxWidth: 180,
   },
 
-  description: {
+  teacherForm: {
+    paddingHorizontal: 10,
+    backgroundColor: "#f0f0f7",
+  },
+
+  form: {
     marginTop: 24,
     color: "#d4c2ff",
     fontSize: 16,
     lineHeight: 26,
     fontFamily: "Poppins_400Regular",
-    maxWidth: 240,
+    backgroundColor: "#fff",
+    paddingHorizontal: 30,
+    borderRadius: 8,
+  },
+
+  titleFormText: {
+    fontSize: 32,
+    fontFamily: "Archivo_700Bold",
+    color: "#32264d",
+    paddingVertical: 12,
+    borderBottomColor: "#c6c6d0",
+    borderBottomWidth: 1,
+  },
+
+  label: {
+    color: "#d4c2ff",
+    fontFamily: "Poppins_400Regular",
+  },
+
+  input: {
+    height: 54,
+    backgroundColor: "#f0f0f7",
+    borderRadius: 8,
+    justifyContent: "center",
+    paddingHorizontal: 16,
+    marginTop: 10,
+    marginBottom: 16,
+    width: "100%",
+  },
+
+  inputGroup: {
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
 
   okButton: {
-    marginVertical: 40,
+    marginVertical: 10,
     backgroundColor: "#04d361",
     height: 58,
     alignItems: "center",

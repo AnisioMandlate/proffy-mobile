@@ -24,14 +24,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 32,
     maxWidth: 160,
-    marginVertical: 40,
+    marginVertical: 20,
   },
   description: {
     fontFamily: "Archivo_400Regular",
     color: "#fff",
     fontSize: 16,
     maxWidth: 200,
-    marginTop: -20,
+    marginTop: 10,
   },
 });
 
