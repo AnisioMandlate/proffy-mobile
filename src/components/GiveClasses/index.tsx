@@ -5,12 +5,18 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  Image,
 } from "react-native";
-import { RectButton, TextInput } from "react-native-gesture-handler";
+import {
+  RectButton,
+  TextInput,
+  BorderlessButton,
+} from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import RNPickerSelect from "react-native-picker-select";
 import styles from "./styles";
 import PageHeader from "../PageHeader";
+import plusIcon from "../../assets/images/icons/plus.png";
 
 function GiveClasses() {
   const navigaition = useNavigation();
@@ -107,7 +113,16 @@ function GiveClasses() {
               </View>
             </View>
             <View>
-              <Text style={styles.titleFormText}>Horários disponíveis</Text>
+              <View style={styles.inputTitleIcon}>
+                <Text style={styles.titleIconText}>Horários disponíveis</Text>
+                <BorderlessButton>
+                  <Image
+                    source={plusIcon}
+                    resizeMode="contain"
+                    style={{ tintColor: "#8257e5" }}
+                  />
+                </BorderlessButton>
+              </View>
               <View style={styles.inputGroup}>
                 <Text style={styles.label}>Dia da Semana</Text>
                 <RNPickerSelect

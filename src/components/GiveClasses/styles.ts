@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
 
   titleFormText: {
-    fontSize: 30,
+    fontSize: 26,
     fontFamily: "Archivo_700Bold",
     color: "#32264d",
     paddingVertical: 12,
@@ -75,6 +75,21 @@ const styles = StyleSheet.create({
   inputGroupSide: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+
+  inputTitleIcon: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderBottomColor: "#c6c6d0",
+    borderBottomWidth: 1,
+  },
+
+  titleIconText: {
+    fontSize: 26,
+    fontFamily: "Archivo_700Bold",
+    color: "#32264d",
+    paddingVertical: 12,
   },
 
   okButton: {
