@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   teacherForm: {
     elevation: 4,
     zIndex: 100,
+    marginTop: -20,
     paddingHorizontal: 10,
     backgroundColor: "#f0f0f7",
   },
