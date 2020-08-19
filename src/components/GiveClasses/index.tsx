@@ -108,6 +108,7 @@ function GiveClasses() {
                   onChangeText={(text) => setWhatsapp(text)}
                   placeholder="WhatsApp"
                   placeholderTextColor="#32264d"
+                  keyboardType="numbers-and-punctuation"
                 />
                 <TextInput
                   style={styles.input}
@@ -147,6 +148,7 @@ function GiveClasses() {
                   onChangeText={(text) => setCost(text)}
                   placeholder="Custo da aula por hora"
                   placeholderTextColor="#32264d"
+                  keyboardType="numeric"
                 />
               </View>
             </View>
@@ -189,7 +191,7 @@ function GiveClasses() {
                           onChangeText={(text) =>
                             setScheduleItemValue(index, "from", text)
                           }
-                          placeholder="Das"
+                          placeholder="Das (08:00)"
                           placeholderTextColor="#c1bccc"
                         />
                       </View>
@@ -200,7 +202,7 @@ function GiveClasses() {
                           onChangeText={(text) =>
                             setScheduleItemValue(index, "to", text)
                           }
-                          placeholder="Até"
+                          placeholder="Até (09:00)"
                           placeholderTextColor="#c1bccc"
                         />
                       </View>
