@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
   },
 
   teacherForm: {
+    elevation: 4,
+    zIndex: 100,
     paddingHorizontal: 10,
     backgroundColor: "#f0f0f7",
   },
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
   },
 
   titleFormText: {
-    fontSize: 32,
+    fontSize: 30,
     fontFamily: "Archivo_700Bold",
     color: "#32264d",
     paddingVertical: 12,
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    color: "#d4c2ff",
+    marginTop: 10,
     fontFamily: "Poppins_400Regular",
   },
 
@@ -61,8 +63,17 @@ const styles = StyleSheet.create({
     width: "100%",
   },
 
+  inputBlock: {
+    width: "48%",
+  },
+
   inputGroup: {
     flexDirection: "column",
+    justifyContent: "space-between",
+  },
+
+  inputGroupSide: {
+    flexDirection: "row",
     justifyContent: "space-between",
   },
 
