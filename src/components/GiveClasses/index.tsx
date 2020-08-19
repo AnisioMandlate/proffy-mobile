@@ -6,6 +6,7 @@ import {
   Platform,
   ScrollView,
   Image,
+  Alert,
 } from "react-native";
 import {
   RectButton,
@@ -50,15 +51,24 @@ function GiveClasses() {
   }
 
   function handleSubmit() {
-    api.post("classes", {
-      name,
-      avatar,
-      whatsapp,
-      bio,
-      subject,
-      cost: Number(cost),
-      schedule: scheduleItems,
-    });
+    api
+      .post("classes", {
+        name,
+        avatar,
+        whatsapp,
+        bio,
+        subject,
+        cost: Number(cost),
+        schedule: scheduleItems,
+      })
+      .then(() => {
+        Alert.alert("Classe criada com sucesso!");
+      })
+      .catch((err) => {
+        if (err?.response?.status === 400) {
+          Alert.alert("Ocorreu um erro na criação da classe!");
+        }
+      });
   }
 
   return (
